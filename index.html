@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Laxxx</title>
+</head>
+<body>
+    <section class="intro">
+        <p class="scroll-text">Scroll down</p>
+    </section>
+
+    <section class="anim">
+        <h1 class="lax" data-lax-preset="rightToLeft-.1  fadeInOut">Animation</h1>
+        <p class="desc lax" data-lax-preset="blurInOut fadeInOut">Checkout this nifty scrolll based animation with laxxx.js</p>
+        <div data-lax-preset="spin" class="box1 lax"></div>
+        <div data-lax-scale="700 1,500 0" class="box2 lax"></div>
+    </section>
+
+    <section >
+           
+    </section>
+
+    <script src="node_modules/lax.js/lib/lax.min.js"></script>
+
+    <script>
+        window.onload = function() {
+	lax.setup() // init
+
+	const updateLax = () => {
+		lax.update(window.scrollY)
+		window.requestAnimationFrame(updateLax)
+	}
+
+	window.requestAnimationFrame(updateLax)
+}
+    </script>
+</body>
+</html>
